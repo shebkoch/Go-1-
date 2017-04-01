@@ -34,6 +34,7 @@ public class GameControl : MonoBehaviour
 	}
 	public void PlayerDies() {
 		ScoreControl.Instance.EndGame();
+		isEnd = true;
 		Time.timeScale = 0.0001f;
 
 	}
