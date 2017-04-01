@@ -8,6 +8,7 @@ public class GameControl : MonoBehaviour
 	public float timeScaleIncValue;
 	public float timeBetweenInc;
 	public GameObject startButton;
+	bool isEnd;
 	public void Awake() {
 		Instance = this;
 		StartCoroutine(TimeScaleInc());
@@ -26,7 +27,7 @@ public class GameControl : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			Application.Quit();
 		}
-		if (Input.GetKeyDown(KeyCode.R)) {
+		if (Input.GetKeyDown(KeyCode.R) || (isEnd && Input.touchCount > 0)) {
 			Time.timeScale = 1;
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
@@ -34,7 +35,7 @@ public class GameControl : MonoBehaviour
 	public void PlayerDies() {
 		ScoreControl.Instance.EndGame();
 		Time.timeScale = 0.0001f;
-		startButton.SetActive(true);
+
 	}
 	public IEnumerator InvisSpriteReturn(Collider2D player, float invisTime) {
 		yield return new WaitForSeconds(invisTime);
