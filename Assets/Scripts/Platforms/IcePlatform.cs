@@ -7,6 +7,10 @@ public class IcePlatform : MonoBehaviour, IDragHandler, IBeginDragHandler
 {
 	public Transform platform;
 	public Vector3 rotateSpeed;
+	Quaternion startRotation;
+	public void Start() {
+		startRotation = transform.rotation;
+	}
 	public void OnBeginDrag(PointerEventData eventData)
 	{
 		if (Mathf.Abs(eventData.delta.y) > Mathf.Abs(eventData.delta.x))
@@ -25,6 +29,6 @@ public class IcePlatform : MonoBehaviour, IDragHandler, IBeginDragHandler
 
 	void OnEnable()
 	{
-		platform.Rotate(new Vector3(0, 0, 180));
+		platform.rotation = startRotation;
 	}
 }
