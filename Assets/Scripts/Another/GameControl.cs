@@ -12,7 +12,7 @@ public class GameControl : MonoBehaviour
 	public void Awake() {
 		Instance = this;
 		StartCoroutine(TimeScaleInc());
-		Time.timeScale = 0.0001f;
+		//Time.timeScale = 0.0001f;
 	}
 
 	IEnumerator TimeScaleInc() {
@@ -34,8 +34,9 @@ public class GameControl : MonoBehaviour
 	}
 	public void PlayerDies() {
 		ScoreControl.Instance.EndGame();
+		StartButton.Instance.EndGame();
 		isEnd = true;
-		Time.timeScale = 0.0001f;
+
 
 	}
 	public IEnumerator InvisSpriteReturn(Collider2D player, float invisTime) {
