@@ -12,11 +12,11 @@ public class ParallaxControl : MonoBehaviour
 	public GameObject prevObj;
 	[Tooltip("Расстояние между центрами этого и prev объектов")]
 	public Vector3 distance;
-
+	[Tooltip("Точка в которой происходит перемещение")]
+	public float teleportPoint;
 	void Update() {
 		transform.Translate(vect * speed * Time.deltaTime);
-	}
-	void OnBecameInvisible() {
-		transform.position = prevObj.transform.position + distance;
+		if(transform.position.x < teleportPoint)
+			transform.position = prevObj.transform.position + distance;
 	}
 }
