@@ -9,11 +9,19 @@ public class SpikeControl : MonoBehaviour, IPointerClickHandler
     float maxPos;
     bool isClicked = false;
     public float speed;
+    float zPos;
+    void Start()
+    {
+        zPos = transform.position.z;
+    } 
     void Update()
     {
         if (isClicked)
         {
-            spikes.transform.position = new Vector3(spikes.transform.position.x, Mathf.Lerp(spikes.transform.position.y, maxPos, Time.deltaTime*speed),5);
+            spikes.transform.position = new Vector3(
+                spikes.transform.position.x, 
+                Mathf.Lerp(spikes.transform.position.y, maxPos, Time.deltaTime*speed),
+                zPos);
       
         }
     }
