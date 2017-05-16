@@ -35,7 +35,7 @@ public class SpikeControl : MonoBehaviour, IPointerClickHandler
     }
     void OnDisable()
     {
-		if(isClicked) spikes.transform.position += new Vector3(0, platformRadius, 0);
+		if(isClicked) spikes.transform.position += new Vector3(0, platformRadius, zPos);
 		isClicked = false;
 	}
 

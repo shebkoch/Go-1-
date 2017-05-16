@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E89D77A8-8A01-D70C-CAE5-A3F03A21C1CA}</ProjectGuid>
+    <ProjectGuid>{F0921E26-817E-B193-0EE3-489C8857526A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -64,6 +64,8 @@
      <Compile Include="Assets\Scripts\Platforms\IcePlatform.cs" />
      <Compile Include="Assets\Scripts\Platforms\InvinsibleBonus.cs" />
      <Compile Include="Assets\Scripts\Platforms\InvisblerPlatform.cs" />
+     <Compile Include="Assets\Scripts\Platforms\PazzleBasis.cs" />
+     <Compile Include="Assets\Scripts\Platforms\PazzlePlatform.cs" />
      <Compile Include="Assets\Scripts\Platforms\RotationPlatform.cs" />
      <Compile Include="Assets\Scripts\Platforms\SpikeCollision.cs" />
      <Compile Include="Assets\Scripts\Platforms\SpikeControl.cs" />
